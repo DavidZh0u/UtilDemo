@@ -23,8 +23,8 @@ public class ExcelUtilDemoApplicationTests {
 
     private static String new_hotel_sql = "insert into `serve_hotel` (`city`,`hotel_id`,`hotel_name`,`brand_name`,`type_name`,`hotel_address`,`opening_hours`, `operating_state`,`is_delete`,`modify_user`,`update_time`,`hotel_lng`,`hotel_lat` ) values" +
             " ({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12});";
-    private static String new_hotel_service_sql = "insert into `serve_hotel_desc`(`hotel_id`,`serve_type`,`is_use`,`modify_user`,`update_time`) values  ({0},{1},{2},{3},{4});";
 
+    private static String new_hotel_service_sql = "insert into `serve_hotel_desc`(`hotel_id`,`serve_type`,`is_use`,`modify_user`,`update_time`) values  ({0},{1},{2},{3},{4});";
 
     @Test
     public void contextLoads() {
@@ -32,7 +32,7 @@ public class ExcelUtilDemoApplicationTests {
 
     @Test
     public void handleHotels() throws Exception{
-        String filePath = "C:\\Users\\David-PC\\Desktop\\需求\\2019-2-14 095643\\行李寄送_杭州（33家）&上海（74家）_配置名单_20190213.xlsx";
+        String filePath = "C:\\Users\\David-PC\\Desktop\\需求\\2019-2-19\\行李寄送_成都_汉庭（27家）配置名单_20190214.xlsx";
         List<List<String>> list = PoiExcelUtil.readInExcel(filePath);
         int flag = 0;
         for (List<String> obj : list) {
@@ -48,7 +48,7 @@ public class ExcelUtilDemoApplicationTests {
 
     @Test
     public void handleHotelService() throws Exception{
-        String filePath = "C:\\Users\\David-PC\\Desktop\\需求\\2019-2-14 095643\\行李寄送_杭州（33家）&上海（74家）_配置名单_20190213.xlsx";
+        String filePath = "C:\\Users\\David-PC\\Desktop\\需求\\2019-2-19\\行李寄送_成都_汉庭（27家）配置名单_20190214.xlsx";
         List<List<String>> list = PoiExcelUtil.readInExcel(filePath);
         int flag = 0;
         for (List<String> obj : list) {

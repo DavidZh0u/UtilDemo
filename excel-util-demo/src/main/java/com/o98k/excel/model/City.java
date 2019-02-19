@@ -11,6 +11,7 @@ public class City {
     public static final String SHANGHAI_XUJIAHUI = "徐家汇";
     public static final String TIANJING = "天津";
     public static final String HANGZHOU = "杭州";
+    public static final String CHENGDU = "成都";
 
     public static String cityMatch(String str){
         if(str.indexOf(BEIJING)>=0){
@@ -21,6 +22,8 @@ public class City {
             return TIANJING;
         }else if(str.indexOf(HANGZHOU)>=0){
             return HANGZHOU;
+        }else if(str.indexOf(CHENGDU)>=0){
+            return CHENGDU;
         }else if(str.indexOf(SHANGHAI_XUJIAHUI)>=0){
             return SHANGHAI;
         }else {
