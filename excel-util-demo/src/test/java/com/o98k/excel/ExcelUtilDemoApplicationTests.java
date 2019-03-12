@@ -2,18 +2,12 @@ package com.o98k.excel;
 
 import com.o98k.excel.model.City;
 import com.o98k.excel.util.PoiExcelUtil;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.StringUtils;
 
-import java.io.FileInputStream;
 import java.text.MessageFormat;
 import java.util.List;
 
@@ -32,7 +26,7 @@ public class ExcelUtilDemoApplicationTests {
 
     @Test
     public void handleHotels() throws Exception{
-        String filePath = "C:\\Users\\David-PC\\Desktop\\需求\\2019-2-19\\行李寄送_成都_汉庭（27家）配置名单_20190214.xlsx";
+        String filePath = "C:\\Users\\David-PC\\Desktop\\需求\\2019-2-27 数据变更\\Sheet1.xlsx";
         List<List<String>> list = PoiExcelUtil.readInExcel(filePath);
         int flag = 0;
         for (List<String> obj : list) {
@@ -48,7 +42,7 @@ public class ExcelUtilDemoApplicationTests {
 
     @Test
     public void handleHotelService() throws Exception{
-        String filePath = "C:\\Users\\David-PC\\Desktop\\需求\\2019-2-19\\行李寄送_成都_汉庭（27家）配置名单_20190214.xlsx";
+        String filePath = "C:\\Users\\David-PC\\Desktop\\需求\\2019-2-27 数据变更\\Sheet1.xlsx";
         List<List<String>> list = PoiExcelUtil.readInExcel(filePath);
         int flag = 0;
         for (List<String> obj : list) {

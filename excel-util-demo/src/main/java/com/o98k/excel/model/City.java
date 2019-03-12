@@ -12,6 +12,10 @@ public class City {
     public static final String TIANJING = "天津";
     public static final String HANGZHOU = "杭州";
     public static final String CHENGDU = "成都";
+    public static final String CHENGDU_WUHOU = "武侯";
+    public static final String CHENGDU_HUANHUAXI= "浣花溪";
+    public static final String CHENGDU_HQZX= "精选环球中心";
+    public static final String BEIJING_ZGC= "精选中关村";
 
     public static String cityMatch(String str){
         if(str.indexOf(BEIJING)>=0){
@@ -26,6 +30,14 @@ public class City {
             return CHENGDU;
         }else if(str.indexOf(SHANGHAI_XUJIAHUI)>=0){
             return SHANGHAI;
+        }else if(str.indexOf(CHENGDU_WUHOU)>=0){
+            return CHENGDU;
+        }else if(str.indexOf(CHENGDU_HUANHUAXI)>=0){
+            return CHENGDU;
+        }else if(str.indexOf(CHENGDU_HQZX)>=0){
+            return CHENGDU;
+        }else if(str.indexOf(BEIJING_ZGC)>=0){
+            return BEIJING;
         }else {
             return null;
         }
