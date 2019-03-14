@@ -1,12 +1,10 @@
 package com.o98k.excel;
 
-import com.o98k.excel.model.City;
 import com.o98k.excel.util.PoiExcelUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.util.StringUtils;
 
 import java.text.MessageFormat;
 import java.util.List;
@@ -26,14 +24,13 @@ public class ExcelUtilDemoApplicationTests {
 
     @Test
     public void handleHotels() throws Exception{
-        String filePath = "C:\\Users\\David-PC\\Desktop\\需求\\2019-2-27 数据变更\\Sheet1.xlsx";
+        String filePath = "C:\\Users\\David-PC\\Desktop\\需求\\2019-3-13数据变更\\行李寄送_新增配置名单_20190313.xlsx";
         List<List<String>> list = PoiExcelUtil.readInExcel(filePath);
         int flag = 0;
         for (List<String> obj : list) {
-            String city = City.cityMatch(obj.get(1));
-            if(!StringUtils.isEmpty(city)){
+            if(!obj.get(2).equals("CityName")){
                 flag ++;
-                String sql = MessageFormat.format(new_hotel_sql,"'"+city+"'","'"+obj.get(0)+"'","'"+obj.get(1)+"'","'"+obj.get(2)+"'","'"+obj.get(3)+"'","'"+obj.get(5)+"'","'全天'","0","0","'admin'","SYSDATE()","'"+obj.get(9)+"'","'"+obj.get(8)+"'");
+                String sql = MessageFormat.format(new_hotel_sql,"'"+obj.get(2)+"'","'"+obj.get(0)+"'","'"+obj.get(1)+"'","'"+obj.get(3)+"'","'"+obj.get(4)+"'","'"+obj.get(6)+"'","'全天'","0","0","'admin'","SYSDATE()","'"+obj.get(10)+"'","'"+obj.get(9)+"'");
                 System.out.println(sql);
             }
         }
@@ -42,12 +39,11 @@ public class ExcelUtilDemoApplicationTests {
 
     @Test
     public void handleHotelService() throws Exception{
-        String filePath = "C:\\Users\\David-PC\\Desktop\\需求\\2019-2-27 数据变更\\Sheet1.xlsx";
+        String filePath = "C:\\Users\\David-PC\\Desktop\\需求\\2019-3-13数据变更\\行李寄送_新增配置名单_20190313.xlsx";
         List<List<String>> list = PoiExcelUtil.readInExcel(filePath);
         int flag = 0;
         for (List<String> obj : list) {
-            String city = City.cityMatch(obj.get(1));
-            if(!StringUtils.isEmpty(city)){
+            if(!obj.get(2).equals("CityName")){
                 flag ++;
                 String sql = MessageFormat.format(new_hotel_service_sql,"'"+obj.get(0)+"'","1","1","'admin'","SYSDATE()");
                 System.out.println(sql);
