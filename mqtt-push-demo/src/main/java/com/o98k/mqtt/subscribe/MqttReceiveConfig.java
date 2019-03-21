@@ -75,7 +75,7 @@ public class MqttReceiveConfig {
     public MessageProducer inbound() {
         MqttPahoMessageDrivenChannelAdapter adapter =
                 new MqttPahoMessageDrivenChannelAdapter(clientId+"_inbound", mqttClientFactory(),
-                        "hz-msg-test","api/huazhuxiyi/#","hello");
+                        "hz-msg-test","api/huazhuxiyi/#","hello","hz-msg-dev");
         adapter.setCompletionTimeout(completionTimeout);
         adapter.setConverter(new DefaultPahoMessageConverter());
         adapter.setQos(1);
