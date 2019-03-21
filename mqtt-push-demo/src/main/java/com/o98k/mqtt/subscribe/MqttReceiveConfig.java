@@ -69,12 +69,13 @@ public class MqttReceiveConfig {
     public MessageChannel mqttInputChannel() {
         return new DirectChannel();
     }
- 
+
+
     //配置client,监听的topic 
     @Bean
     public MessageProducer inbound() {
         MqttPahoMessageDrivenChannelAdapter adapter =
-                new MqttPahoMessageDrivenChannelAdapter(clientId+"_inbound", mqttClientFactory(),
+                new MqttPahoMessageDrivenChannelAdapter(clientId, mqttClientFactory(),
                         "hz-msg-test","api/huazhuxiyi/#","hello","hz-msg-dev");
         adapter.setCompletionTimeout(completionTimeout);
         adapter.setConverter(new DefaultPahoMessageConverter());

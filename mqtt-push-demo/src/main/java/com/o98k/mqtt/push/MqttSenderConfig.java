@@ -49,20 +49,23 @@ public class MqttSenderConfig {
         mqttConnectOptions.setKeepAliveInterval(2);
         return mqttConnectOptions;
     }
+
     @Bean
     public MqttPahoClientFactory mqttClientFactoryPush() {
         DefaultMqttPahoClientFactory factory = new DefaultMqttPahoClientFactory();
         factory.setConnectionOptions(getMqttConnectOptionsPush());
         return factory;
     }
+
     @Bean
     @ServiceActivator(inputChannel = "mqttOutboundChannel")
     public MessageHandler mqttOutbound() {
-        MqttPahoMessageHandler messageHandler =  new MqttPahoMessageHandler(clientId, mqttClientFactoryPush());
+        MqttPahoMessageHandler messageHandler =  new MqttPahoMessageHandler(clientId+"_huazhu", mqttClientFactoryPush());
         messageHandler.setAsync(true);
         messageHandler.setDefaultTopic(defaultTopic);
         return messageHandler;
     }
+
     @Bean
     public MessageChannel mqttOutboundChannel() {
         return new DirectChannel();
