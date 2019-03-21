@@ -76,7 +76,7 @@ public class MqttReceiveConfig {
     public MessageProducer inbound() {
         MqttPahoMessageDrivenChannelAdapter adapter =
                 new MqttPahoMessageDrivenChannelAdapter(clientId, mqttClientFactory(),
-                        "hz-msg-test","api/huazhuxiyi/#","hello","hz-msg-dev");
+                        "hz-msg-test","api/huazhuxiyi/#","hello","hz-msg-dev","api/huazhuxiyi/login/70874","api/huazhuxiyi/logout/70874");
         adapter.setCompletionTimeout(completionTimeout);
         adapter.setConverter(new DefaultPahoMessageConverter());
         adapter.setQos(1);
@@ -101,6 +101,10 @@ public class MqttReceiveConfig {
                     System.out.println("[hello]:"+message.getPayload().toString());
                 }else if("api/huazhuxiyi/#".equalsIgnoreCase(topic)){
                     System.out.println("[洗衣机消息订阅]:"+message.getPayload().toString());
+                }else if("api/huazhuxiyi/login/70874".equalsIgnoreCase(topic)){
+                    System.out.println("[上线设备]:"+message.getPayload().toString());
+                }else if("api/huazhuxiyi/logout/70874".equalsIgnoreCase(topic)){
+                    System.out.println("[下线设备]:"+message.getPayload().toString());
                 }
             }
         };
