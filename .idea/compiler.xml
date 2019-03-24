@@ -10,6 +10,8 @@
         <module name="grab-bags-demo" />
         <module name="mail-util-demo" />
         <module name="mqtt-push-demo" />
+        <module name="rabbit-mq-consumer" />
+        <module name="rabbit-mq-provider" />
         <module name="UtilDemo" />
       </profile>
     </annotationProcessing>
@@ -20,6 +22,8 @@
       <module name="grab-bags-demo" options="-parameters" />
       <module name="mail-util-demo" options="-parameters" />
       <module name="mqtt-push-demo" options="-parameters" />
+      <module name="rabbit-mq-consumer" options="-parameters" />
+      <module name="rabbit-mq-provider" options="-parameters" />
     </option>
   </component>
 </project>
