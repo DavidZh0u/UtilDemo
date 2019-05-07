@@ -6,15 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="excel-util-demo" />
         <module name="grab-bags-demo" />
-        <module name="mail-util-demo" />
         <module name="mqtt-push-demo" />
+        <module name="mail-util-demo" />
         <module name="rabbit-mq-consumer" />
-        <module name="rabbit-mq-provider" />
         <module name="UtilDemo" />
+        <module name="rabbit-mq-provider" />
+        <module name="excel-util-demo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="sms-util-demo" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -24,6 +27,7 @@
       <module name="mqtt-push-demo" options="-parameters" />
       <module name="rabbit-mq-consumer" options="-parameters" />
       <module name="rabbit-mq-provider" options="-parameters" />
+      <module name="sms-util-demo" options="-parameters" />
     </option>
   </component>
 </project>
